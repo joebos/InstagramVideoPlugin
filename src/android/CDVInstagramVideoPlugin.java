@@ -102,6 +102,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
                 is.read(videoData);
                 is.close();
             } catch (Exception e) {
+                this.cbContext.error(e.message);
                 e.printStackTrace();
             }
 
@@ -118,6 +119,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
                 file = File.createTempFile("instagram_video", ".mp4", parentDir);
                 os = new FileOutputStream(file, true);
             } catch (Exception e) {
+                this.cbContext.error(e.message);
                 e.printStackTrace();
             }
 
@@ -127,6 +129,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
 				os.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+                this.cbContext.error(e.message);
 				e.printStackTrace();
 			}
         	
