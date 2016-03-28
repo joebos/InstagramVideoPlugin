@@ -90,6 +90,8 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
     private void share(String videoUrl, String captionString) {
         if (videoUrl != null && videoUrl.length() > 0) {
 
+            this.webView.loadUrl("javascript:console.log('processing " + videoUrl + "');");
+
             byte[] videoData = null;
 
             try{
@@ -102,7 +104,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
                 is.read(videoData);
                 is.close();
             } catch (Exception e) {
-                this.cbContext.error(e.getMessage());
+                this.webView.loadUrl("javascript:console.log('" + e.getMessage() + "');");
                 e.printStackTrace();
             }
 
@@ -119,7 +121,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
                 file = File.createTempFile("instagram_video", ".mp4", parentDir);
                 os = new FileOutputStream(file, true);
             } catch (Exception e) {
-                this.cbContext.error(e.getMessage());
+                this.webView.loadUrl("javascript:console.log('" + e.getMessage() + "');");
                 e.printStackTrace();
             }
 
@@ -129,7 +131,6 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
 				os.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-                this.cbContext.error(e.getMessage());
 				e.printStackTrace();
 			}
         	
