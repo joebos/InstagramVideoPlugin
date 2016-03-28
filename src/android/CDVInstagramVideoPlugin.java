@@ -99,7 +99,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
                 URLConnection ucon = url.openConnection();
                 InputStream is = ucon.getInputStream();
                 videoData = new byte[is.available()];
-                is.read(data);
+                is.read(videoData);
                 is.close();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -122,7 +122,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
             }
 
         	try {
-        		os.write(data);
+        		os.write(videoData);
 				os.flush();
 				os.close();
 			} catch (IOException e) {
