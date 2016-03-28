@@ -90,13 +90,15 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
     private void share(String videoUrl, String captionString) {
         if (videoUrl != null && videoUrl.length() > 0) {
 
+            byte[] videoData = null;
+
             try{
 
                 URL url = new URL(videoUrl);
 
                 URLConnection ucon = url.openConnection();
                 InputStream is = ucon.getInputStream();
-                byte[] data = new byte[is.available()];
+                videoData = new byte[is.available()];
                 is.read(data);
                 is.close();
             } catch (Exception e) {
