@@ -44,7 +44,7 @@ import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 
-import java.net.URL
+import java.net.URL;
 import java.net.URLConnection;
 import java.io.InputStream;
 
