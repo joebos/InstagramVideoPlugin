@@ -1,0 +1,33 @@
+{
+  "name": "cordova-instagram-video-plugin",
+  "version": "0.1.0",
+  "description": "Share video to the Instagram application on iOS and Android.",
+  "cordova": {
+    "id": "cordova-instagram-video-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joebos/InstagramVideoPlugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Joe Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joebos/InstagramVideoPlugin/issues"
+  },
+  "homepage": "https://github.com/joebos/InstagramVideoPlugin#readme"
+}
