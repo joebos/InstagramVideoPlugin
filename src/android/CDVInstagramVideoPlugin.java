@@ -44,6 +44,10 @@ import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 
+import java.net.URL
+import java.net.URLConnection;
+import java.io.InputStream;
+
 @TargetApi(Build.VERSION_CODES.FROYO)
 public class CDVInstagramVideoPlugin extends CordovaPlugin {
 
@@ -89,7 +93,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
             URL url = new URL(videoUrl);
 
             URLConnection ucon = url.openConnection();
-            is = ucon.getInputStream();
+            InputStream is = ucon.getInputStream();
         	byte[] data = new byte[is.available()];
             is.read(data);
             is.close();
