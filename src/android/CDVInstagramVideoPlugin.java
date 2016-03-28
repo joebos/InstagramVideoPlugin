@@ -92,7 +92,7 @@ public class CDVInstagramVideoPlugin extends CordovaPlugin {
             is = ucon.getInputStream();
         	byte[] data = new byte[is.available()];
             is.read(data);
-            is.close(();
+            is.close();
 
         	File file = null;  
             FileOutputStream os = null;
